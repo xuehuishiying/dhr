@@ -1,0 +1,44 @@
+<title>数字图书馆</title>
+<div align="center"><h1>数字图书馆
+<input type="button" value="注销" onclick="location.href='/login/'">
+<input type="button" value="修改密码" onclick="location.href='/set_password/'"></h1></div> 
+<link rel="stylesheet" type="text/css" href="/media/css/2.css"/>
+<style type="text/css">
+body {
+     background-image: url(/media/images/1.jpg);
+     background-repeat: no-repeat
+}
+</style> 
+<div align="center">
+<form action="/search/" method="get">
+共有 <b>{{count}}</b> 本书, <input type="button" value="添加图书" onclick="location.href='/add_book/'">
+<input name="Name" type="text" placeholder="作者名" ><input type="submit" value="查询" onclick="location.href='/all_book/?name={{ book.Author.Name }}'" >
+</div>
+</form>
+<table width="1000" border=1 align="center">
+
+<body>
+<tr style="text-align: center"><form method = "get">
+  <tr bgcolor="gray">
+        <th style="text-align: center">图书编号</th>
+        <th style="text-align: center">书名</th>
+        <th style="text-align: center">作者</th>
+        <th style="text-align: center">出版社</th>
+        <th style="text-align: center">操作</th>
+    </tr>
+{% for book in book %}
+    <tr>
+        <td style="text-align: center">{{ book.ISBN }}</td>
+        <td style="text-align: center"><input type="button" value={{ book.Title }} onclick="location.href='/book_detail/?id={{book.id}}'"></td>
+        <td style="text-align: center">{{ book.Author.Name }}</td>
+        <td style="text-align: center">{{ book.Publisher}}</td>
+        <td style="text-align: center"><input type="button" value="删除" onclick="location.href='/delete/?id={{book.id}}'"> <input type="button" value="更新" onclick="location.href='/update/?id={{book.id}}'"></td>
+  </tr>
+{% endfor %}
+</table>
+
+
+
+
+
+</body>

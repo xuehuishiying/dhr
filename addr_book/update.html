@@ -1,0 +1,58 @@
+<form method="post">
+<head><title>更新图书</title></head>
+<div align="center"><h1>更新图书</h1></div>
+<style type="text/css">
+body {
+     background-image: url(/media/images/1.jpg);
+     background-repeat: no-repeat
+}
+</style>
+<table border=1 align="center">
+    <tr bgcolor="gray">
+        <th>图书编号</th>
+    </tr>
+    <tr>
+        <td><input name="ISBN" type="text"  value={{ book.ISBN }}></td>
+    </tr>
+    <tr class="alt" bgcolor="gray">
+        <th>书名</th>
+    </tr>
+    <tr>
+        <td align="center"><input name="Title" type="text"  value={{ book.Title }}></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>作者</th>
+    </tr>
+    <tr>
+        <td align="center"><b>{{ book.Author.Name }}</b></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>出版社</th>
+    </tr>
+    <tr>
+        <td><input name="Publisher" type="text" value={{ book.Publisher }}></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>出版日期</th>
+    </tr>
+    <tr>
+        <td><input name="PublishDate" type="text" value={{ book.PublishDate }}></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>价格</th>
+    </tr>
+    <tr>
+        <td><input name="Price" type="text" value={{ book.Price }}></td>
+    </tr>
+    <tr bgcolor="gray" align="center">
+        <th>操作</th>
+    </tr>
+    <tr align="center">
+        <td><input type="submit" value="保存" onclick="location.href='/all_book/'" > <input type="reset" value="重填"></td>
+    </tr>
+
+</table>
+<div style="text-align:center;">
+    <input type="button" value="返回浏览全部图书" onclick="location.href='/all_book/'"><input type="button" value="添加图书" onclick="location.href='/add_book/'">
+</div>
+</form>

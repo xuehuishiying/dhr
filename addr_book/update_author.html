@@ -1,0 +1,36 @@
+<form method="post">
+<head><title>更新作者</title></head>
+<div align="center"><h1>更新作者</h1></div>
+<style type="text/css">
+body {
+     background-image: url(/media/images/1.jpg);
+     background-repeat: no-repeat
+}
+</style>
+<table border=1 align="center">
+    <tr class="alt" bgcolor="gray">
+        <th>姓名</th>
+    </tr>
+    <tr>
+        <td align="center"><input name="Title" type="text"  value={{ author.Name }}></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>年龄</th>
+    </tr>
+    <tr>
+        <td align="center"><b>{{ author.Age }}</b></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>国籍</th>
+    </tr>
+    <tr>
+        <td><input name="Publisher" type="text" value={{ author.Country }}></td>
+    </tr>
+        <th>操作</th>
+    </tr>
+    <tr align="center">
+        <td><input type="submit" value="保存" onclick="location.href='/update/'" > <input type="reset" value="重填"></td>
+    </tr>
+
+</table>
+</form>

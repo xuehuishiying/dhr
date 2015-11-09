@@ -1,0 +1,67 @@
+<form method="post">
+<head><title>书目详情</title></head>
+<div align="center"><h1>书目详情</h1></div>
+<style type="text/css">
+body {
+     background-image: url(/media/images/1.jpg);
+     background-repeat: no-repeat
+}
+</style>
+<table border=1 align="center">
+    <tr bgcolor="gray">
+        <th>图书编号</th>
+    </tr>
+    <tr>
+        <td align="center"><b>{{ book.ISBN }}</b></td>
+    </tr>
+    <tr class="alt" bgcolor="gray">
+        <th>书名</th>
+    </tr>
+    <tr>
+        <td align="center"><b>{{ book.Title }}</b></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>作者</th>
+    </tr>
+    <tr>
+        <td align="center"><b>{{ book.Author.Name }}</b></td>
+    </tr>
+    <tr bgcolor="gray">
+    <th>年龄</th>
+    </tr>
+    <tr>
+        <td align="center"><b>{{ book.Author.Age }}</b></td>
+    </tr>
+    <tr bgcolor="gray">
+    <th>国籍</th>
+    </tr>
+    <tr>
+        <td align="center"><b>{{ book.Author.Country }}</b></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>出版社</th>
+    </tr>
+    <tr>
+        <td align="center"><b>{{ book.Publisher }}</b></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>出版日期</th>
+    </tr>
+    <tr>
+        <td align="center"><b>{{ book.PublishDate }}</b></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>价格</th>
+    </tr>
+    <tr>
+        <td align="center"><b>{{ book.Price }}</b></td>
+    </tr>
+    <tr bgcolor="gray" align="center">
+        <th>操作</th>
+    </tr>
+    <tr align="center">
+        <td><input type="button" value="返回" onclick="location.href='/search/?Name={{book.Author.Name}}'"></td>
+    </tr>
+
+</table>
+</form>
